@@ -29,7 +29,7 @@ colnames(temp)[1]<-"Date"
 ggplot(temp, aes(x=Date, y=Sum_of_Steps, fill=Date))+geom_bar(stat="identity")+theme(axis.text.x = element_text(size=7, angle=90), legend.position = "none")
 ```
 
-![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png)
+![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-%202-1.png)
 
 In order to plot above figure, we've already use tapply to calculate the total number of steps taken each day. Adn save it in a data frame "temp", let's use below code to calculate the mean and median per day. 
 
@@ -61,7 +61,7 @@ colnames(temp1)<-c("Time_Interval", "Average_Step")
 ggplot(temp1, aes(x=Time_Interval, y=Average_Step))+geom_line(col="#05CCEE", size=1.2)+theme_bw()+ggtitle("Time Series Plot")
 ```
 
-![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png)
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-%204-1.png)
 
 ```r
 Q2_ans<-temp1$Time_Interval[which.max(temp1$Average_Step)]
@@ -142,7 +142,7 @@ p_data<-ddply(data, ~interval+wday, summarise, mean=mean(steps, na.rm=TRUE))
 ggplot(p_data, aes(x=interval, y=mean, col=wday))+geom_line(size=1)+facet_grid(.~wday)+xlab("Time Interval")+ylab("Mean of steps")+ggtitle("Panel plot")
 ```
 
-![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10-1.png)
+![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-%2010-1.png)
 
 
 
